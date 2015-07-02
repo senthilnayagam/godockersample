@@ -7,14 +7,14 @@ buildgo:
 	CGO_ENABLED=0 GOOS=linux go build -ldflags "-s" -a -installsuffix cgo -o main .
 
 builddocker:
-	docker build --rm --tag=johannesboyne/godockersample .
+	docker build --rm --tag=senthilnayagam/godockersample .
 
 buildp: buildgo builddocker
 
 run: buildp
 	docker run \
 		-e HELLO=world \
-		-p 1337:1337 johannesboyne/godockersample
+		-p 1337:1337 senthilnayagam/godockersample
 
 test:
 	go test -timeout=5s ./...

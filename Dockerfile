@@ -1,7 +1,7 @@
 FROM tianon/true
 EXPOSE 1337
 
-COPY certs/certs /etc/ssl/certs/
+COPY certs/ca-certificates.crt /etc/ssl/certs/
 ADD main /
 
 CMD ["/main"]
